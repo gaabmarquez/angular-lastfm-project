@@ -11,14 +11,7 @@ import { ActivatedRoute } from '@angular/router'
 export class DetailArtistComponent implements OnInit {
 
 
-  // 1) The artist's name
-  // 2) An image from the artist.
-  // 3) The artist's URL.
-  // 4) List of the artist's top tracks' names.
-  // 5) List of the artist's top albums' names.
-
-  // @Input() name: string;
-  private selectedArtist: Artist;
+  public selectedArtist: Artist;
 
   constructor(private artistService: ArtistService, private route: ActivatedRoute) {
 
@@ -41,7 +34,6 @@ export class DetailArtistComponent implements OnInit {
   loadData(name: string) {
     this.artistService.getArtistInfoByName(name).subscribe(
       artist => {
-        console.log(artist)
         this.selectedArtist = new Artist(artist.artist.name, artist.artist.url, artist.artist.bio.summary,artist.artist.image[3]["#text"])
         this.artistService.getArtistTopTracksByName(name).subscribe(
           toptracks => {

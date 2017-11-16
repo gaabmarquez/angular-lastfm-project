@@ -12,16 +12,15 @@ export class ListArtistComponent implements OnInit {
   constructor(private artistService: ArtistService) {
 
   }
-  private artists: Artist[] = [];
+
+  public artists: Artist[] = [];
 
   ngOnInit() {
-    // this.artists = 
     this.artistService.getTopArtists().subscribe(
       artists => {
 
         for (let artist of artists.artists.artist) {
           let artistAux: Artist = new Artist(artist.name, artist.url, "", artist.image[3]["#text"])
-          console.log(artist.image[3]["#text"])
           this.artists.push(artistAux);
         }
 
