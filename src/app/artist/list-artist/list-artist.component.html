@@ -1,0 +1,19 @@
+<div class="col-md-3" *ngFor="let artist of artists">
+
+  <a style="display:block" routerLink="/artist/{{artist.name}}">
+  
+    <div class="card">
+      <img src="{{artist.img}}"  alt="Avatar"  style="width:100%">
+      <div class="card-container">
+        <h4><b>{{artist.name}}</b></h4>
+      </div>
+    </div>
+
+
+
+
+
+  </a>
+  <br><br>
+
+</div>

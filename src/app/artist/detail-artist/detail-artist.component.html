@@ -1,0 +1,38 @@
+<div class="col-md-2">
+  <img src="{{selectedArtist?.img}}" style="width:100%">
+</div>
+
+<div class="col-md-10">
+  <h3> <b>{{selectedArtist?.name}}</b> </h3>
+  <h5> <a href="{{selectedArtist?.url}}">
+    {{selectedArtist?.url}}
+    </a>
+  </h5>
+  {{selectedArtist?.content}}
+  <br><br>
+</div>
+<div class="col-md-4 col-md-offset-2">
+  <br> <br>
+
+  <table class="table" style="width: auto">
+    <tr>
+      <th>Top Tracks</th>
+
+    </tr>
+    <tr *ngFor="let track of selectedArtist?.topTracks">
+      <td>{{track}}</td>
+    </tr>
+  </table>
+</div>
+<div class="col-md-4">
+  <br> <br>
+  <table class="table" style="width: auto">
+    <tr>
+      <th>Top Albums</th>
+
+    </tr>
+    <tr *ngFor="let track of selectedArtist?.topAlbums">
+      <td>{{track}}</td>
+    </tr>
+  </table>
+</div>
